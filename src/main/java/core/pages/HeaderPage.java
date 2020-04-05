@@ -12,13 +12,15 @@ public class HeaderPage extends BaseUIPage {
         super(driver);
     }
 
-    public void clickSettingsMenu() {
-        click(SETTINGS_MENU);
-    }
-
-    public void clickItemsMenu() {
-        dissmissNewFeatureOKButt();
-        waitForElement(ITEMS_MENU);
-        click(ITEMS_MENU);
+    public void click(String chooseMenu) {
+        switch (chooseMenu) {
+            case "settings":
+                click(SETTINGS_MENU);
+                break;
+            case "items":
+                waitForElement(ITEMS_MENU);
+                click(ITEMS_MENU);
+                break;
+        }
     }
 }

@@ -14,6 +14,7 @@ public class BankAccountTest extends BaseUITest {
     private final static String BANK_IBAN = "BI53947756728818";
     private final static String CURRENCY = "BGN";
     private final static String EXPECTED_ERROR_MSG = "Банковата сметка е изтрита успешно.";
+    private final static String SETTINGS_MENU = "settings";
 
 
     @Test
@@ -21,9 +22,8 @@ public class BankAccountTest extends BaseUITest {
     @DisplayName("Can delete existing bank account")
     public void canDeleteExistingBankAccount() {
         api.bankAccountAPI.createBankAccount(BANK_NAME, BANK_NAME_EN, BANK_BIC, BANK_IBAN, CURRENCY);
-
         app.loginPage.login(Email.VALID_EMAIL, Password.VALILD_PASSWORD);
-        app.headerPage.clickSettingsMenu();
+        app.headerPage.click(SETTINGS_MENU);
         app.settingsMenuPage.clickBankAccountsLink();
         app.bankAccountPage.deleteBankAccount();
         app.bankAccountPage.verifyAccountDeleted(EXPECTED_ERROR_MSG);

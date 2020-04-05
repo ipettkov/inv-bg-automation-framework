@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BankAccountPage extends BaseUIPage {
     private static final By DELETE_BANK_ACCOUNT = By.cssSelector("a.bank-account--delete.selenium-bank-acc-delete");
     private static final By DELETE_CONFIRMATION_BUTTON = By.cssSelector("button.modal-confirm__ok-button.selenium-modal-ok-btn");
-    private static final By SUCCESS_MESSAGE = By.id("okmsg");
 
     public BankAccountPage(WebDriver driver) {
         super(driver);
