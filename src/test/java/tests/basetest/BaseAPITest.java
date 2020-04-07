@@ -4,7 +4,7 @@ import core.core.Api;
 import org.junit.jupiter.api.BeforeEach;
 
 public class BaseAPITest {
-    protected Api api;
+    Api api;
 
     @BeforeEach
     public void beforeEach() {

@@ -22,7 +22,7 @@ public class ItemPageTest extends BaseUITest {
     public void canCreateItemViaAPIandDelViaUI() {
         api.itemAPI.createItem(ITEM_NAME, PRICE_FOR_QUANTITY, QUANTITY_UNIT);
         app.loginPage.login(Email.VALID_EMAIL, Password.VALILD_PASSWORD);
-        app.headerPage.click(SETTINGS);
+        app.headerPage.click(ITEMS_MENU);
         app.itemsPage.deleteItemByName(ITEM_NAME);
         app.itemsPage.verifyItemSuccessfulDeletion();
     }
